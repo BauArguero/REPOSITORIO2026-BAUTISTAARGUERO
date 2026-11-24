@@ -1,36 +1,24 @@
-#include <stdio.h>
-#include <string.h>
-
-struct Alumno {
-    char nombre[50];
-    int edad;
-    int año;
-};
+ #include <stdio.h>
 
 int main() {
-    struct Alumno alumno;
+    int matriz[3][2];
+    int i, j;
 
-    strcpy(alumno.nombre, "Bruno");
-    alumno.edad = 16;
-    alumno.año = 5;
+    printf("Ingrese los valores de la matriz 3x2:\n");
 
-    printf("Datos originales:\n");
-    printf("Nombre: %s\n", alumno.nombre);
-    printf("Edad: %d\n", alumno.edad);
-    printf("Anio: %d\n\n", alumno.año);
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 2; j++) {
+            printf("Matriz[%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
 
-    printf("Ingrese el nuevo nombre: ");
-    scanf(" %[^\n]", alumno.nombre);
+    printf("\nMatriz 3x2:\n");
 
-    printf("Ingrese la nueva edad: ");
-    scanf("%d", &alumno.edad);
-
-    printf("Ingrese el nuevo año: ");
-    scanf("%d", &alumno.año);
-
-    printf("\nDatos modificados:\n");
-    printf("Nombre: %s\n", alumno.nombre);
-    printf("Edad: %d\n", alumno.edad);
-    printf("Anio: %d\n", alumno.año);
-
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 2; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
     return 0;
